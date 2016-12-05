@@ -1,0 +1,209 @@
+@font-face {
+  font-family: Archivo;
+  src: url(font/archivo-narrow/ArchivoNarrow-Regular.otf);
+}
+
+@font-face {
+  font-family: Archivo-BoldItalic;
+  src: url(font/archivo-narrow/ArchivoNarrow-BoldItalic.otf);
+}
+
+@font-face {
+  font-family: Archivo-Bold;
+  src: url(font/archivo-narrow/ArchivoNarrow-Bold.otf);
+}
+
+
+@font-face {
+  font-family: Archivo-Italic;
+  src: url(font/archivo-narrow/ArchivoNarrow-Italic.otf);
+}
+
+
+@font-face {
+  font-family: Lydian;
+  src: url(font/LYDIAN__.TTF);
+}
+
+html, body {
+}
+
+html {
+  height: 100%;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2e487f+0,5281e5+77,5281e5+100 */
+  //background: #2e487f; /* Old browsers */
+  //background: -moz-linear-gradient(-45deg,  #2e487f 0%, #5281e5 77%, #5281e5 100%); /* FF3.6-15 */
+  //background: -webkit-linear-gradient(-45deg,  #2e487f 0%,#5281e5 77%,#5281e5 100%); /* Chrome10-25,Safari5.1-6 */
+  //background: linear-gradient(135deg,  #2e487f 0%,#5281e5 77%,#5281e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e487f', endColorstr='#5281e5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  //background-size: cover;
+}
+
+body {
+  font-family: 'Archivo', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: none !important;
+  position:relative;
+}
+
+body a {
+  color: #bcbcbc;
+  &:hover {
+    text-decoration: none;
+    color: #bcbcbc;
+  }
+}
+
+h2 {
+  margin: 0 !important;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0 !important;
+  padding: 0;
+}
+
+@media (max-width: 992px) {
+  .col-xs-12{
+    padding: 0 !important;
+  }
+}
+
+
+header {
+  width: 100%;
+  padding: 20px 40px;
+  position:fixed;
+  z-index: 1;
+  background-color: white;
+  h1 {
+    letter-spacing: 0.5em;
+    font-family: 'Archivo-Bold', sans-serif;
+    font-size: 1em;
+    display:inline;
+    @media (max-width: 992px) {
+      text-align: center;
+    }
+  }
+  .glyphicon-menu-hamburger{
+    display:none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+    @media (max-width: 992px) {
+      display: block;
+    }
+  }
+  .music-player {
+    float: right;
+    span {
+      padding: 0 10px;
+      color: #bcbcbc;
+      &:hover {
+        color: black;
+        cursor: pointer;
+      }
+    }
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+}
+
+img#background-image {
+  opacity: 0.1;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  object-fit: cover;
+  padding: 0 1px;
+  left: 0;
+}
+
+nav {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  padding-right: 20px;
+  padding-bottom: 40px;
+  ul {
+    li {
+      text-align: right;
+      font-size: 2em;
+      letter-spacing: 0.2em;
+      font-family: 'Archivo-BoldItalic', sans-serif;
+      a{
+        transition: margin-right 0.5s cubic-bezier(.25,.8,.25,1);
+        &:hover {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+  .glyphicon-menu-right{
+    display:none;
+  }
+  @media (max-width: 992px) {
+    background-color: white;
+    height: 100%;
+    padding: 20px;
+    right: -300px;
+    transition: all 0.9s cubic-bezier(.25,.8,.25,1);
+    .glyphicon-menu-right {
+      display:block;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+div.main {
+  animation: fadeIn 500ms ease-out 0.5s 1 normal;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  height: 100%;
+  margin: 0 auto;
+  h1.pageTitle {
+    //font-family: 'Lydian', sans-serif;
+    //color: white;
+    //position: fixed;
+    //bottom: 0;
+    //left: 0;
+    //float: right;
+    margin: 20px;
+  }
+  & > * {
+    display: inline;
+  }
+
+}
+
+@keyframes slideDownFade {
+  0%   {top:200px;}
+  25%  {top:100px;}
+  50%  {top:50px;}
+  100% {top:00px;}
+}
+.pageTitle {
+  transition: all 1s cubic-bezier(.25,.8,.25,1);
+  //&:hover {
+  //  top: 0;
+  //}
+  opacity: 0;
+  top:50px;
+  font-family: 'Archivo-Bold', sans-serif;
+  position: fixed;
+  margin-top: 100px;
+  font-size: 2em;
+  color: black;
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+  transform: rotate(90deg);
+}

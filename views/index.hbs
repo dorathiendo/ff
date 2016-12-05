@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="/stylesheets/index.css"/>
+<!--<div class="overlay"></div>-->
+{{#each posts}}
+    <div class="card-wrapper col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <div class="card {{type}}" >
+            {{#if title}}<h2>{{title}}</h2>{{/if}}
+            {{{content}}}
+        </div>
+    </div>
+{{/each}}

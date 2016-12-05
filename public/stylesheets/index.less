@@ -1,0 +1,42 @@
+.main {
+  div.card-wrapper {
+    border-right: 1px solid whitesmoke;
+    @media (max-width: 992px) {
+      border:none;
+    }
+    .card {
+      margin-bottom: 15px;
+      &.text {
+        padding: 10px;
+        overflow-y: auto;
+        white-space: normal;
+        h1 {
+          display: block;
+        }
+      }
+      &.video {
+        iframe {
+          width: 100%;
+        }
+      }
+      &.image {
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      &.music {
+        iframe {
+          width: 100% !important;
+        }
+      }
+      &.release {
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
