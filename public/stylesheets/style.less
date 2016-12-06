@@ -21,6 +21,21 @@
 
 
 @font-face {
+  font-family: CarbonType;
+  src: url(font/CarbonType/carbontype.ttf);
+}
+
+@font-face {
+  font-family: Kingthings;
+  src: url(font/Kingthings-Trypewriter/Kingthings_Trypewriter_2.ttf);
+}
+
+@font-face {
+  font-family: Report;
+  src: url(font/1942-report/1942.ttf);
+}
+
+@font-face {
   font-family: Lydian;
   src: url(font/LYDIAN__.TTF);
 }
@@ -41,9 +56,10 @@ html {
 }
 
 body {
-  font-family: 'Archivo', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  //font-family: 'Archivo', sans-serif;
+  font-family: 'Kingthings', sans-serif !important;
+  //text-transform: uppercase;
+  //letter-spacing: 1px;
   background: none !important;
   position:relative;
 }
@@ -81,11 +97,17 @@ header {
   background-color: white;
   h1 {
     letter-spacing: 0.5em;
-    font-family: 'Archivo-Bold', sans-serif;
-    font-size: 1em;
+    text-transform: uppercase;
     display:inline;
     @media (max-width: 992px) {
       text-align: center;
+      font-size: 1em;
+    }
+    a{
+      transition: all 0.5s cubic-bezier(.25,.8,.25,1);
+      &:hover {
+        color: black;
+      }
     }
   }
   .glyphicon-menu-hamburger{
@@ -98,8 +120,16 @@ header {
       display: block;
     }
   }
-  .music-player {
-    float: right;
+}
+
+.music-player {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  margin: 20px 40px;
+  #buttons{
+    padding-bottom: 10px;
     span {
       padding: 0 10px;
       color: #bcbcbc;
@@ -108,9 +138,35 @@ header {
         cursor: pointer;
       }
     }
-    @media (max-width: 992px) {
-      display: none;
+  }
+  #song-list {
+    transition: all 0.9s cubic-bezier(.25,.8,.25,1);
+    height: 0;
+    overflow: hidden;
+    border: 1px solid whitesmoke;
+    ul {
+      transition: all 0.9s cubic-bezier(.25,.8,.25,1);
+      height: 0;
+      overflow: hidden;
+      li{
+        cursor: pointer;
+        padding: 10px;
+        &:not(:last-child){
+          border-bottom: 1px solid whitesmoke;
+        }
+        &:hover {
+          background-color: whitesmoke;
+        }
+      }
     }
+
+  }
+  @media (max-width: 992px) {
+    display: none;
+  }
+  .toggled{
+    height: 200px !important;
+    border: 1px solid whitesmoke;
   }
 }
 
@@ -136,11 +192,18 @@ nav {
       text-align: right;
       font-size: 2em;
       letter-spacing: 0.2em;
-      font-family: 'Archivo-BoldItalic', sans-serif;
+      cursor: pointer;
+      font-family: 'Kingthings', sans-serif;
+      text-transform: uppercase;
       a{
-        transition: margin-right 0.5s cubic-bezier(.25,.8,.25,1);
+        transition: all 0.5s cubic-bezier(.25,.8,.25,1);
         &:hover {
           margin-right: 20px;
+          color: black;
+        }
+        &.active {
+          margin-right: 20px;
+          color: black;
         }
       }
     }
@@ -170,19 +233,30 @@ div.main {
   opacity: 0;
   height: 100%;
   margin: 0 auto;
-  h1.pageTitle {
-    //font-family: 'Lydian', sans-serif;
-    //color: white;
-    //position: fixed;
-    //bottom: 0;
-    //left: 0;
-    //float: right;
-    margin: 20px;
+
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  @media (max-width: 992px) {
+    grid-template-columns: 100%;
   }
-  & > * {
-    display: inline;
+  grid-gap: 10px 10px;
+  grid-auto-flow: row dense;
+  .card-wrapper {
+    display: inline-grid;
+    padding: 10px;
+    border-right: 1px solid whitesmoke;
+    .card {
+      transition: all 0.9s cubic-bezier(.25,.8,.25,1);
+      padding: 0;
+      & > * {
+        width: 100%;
+      }
+    }
   }
 
+  h1.pageTitle {
+    margin: 20px;
+  }
 }
 
 @keyframes slideDownFade {
@@ -193,9 +267,6 @@ div.main {
 }
 .pageTitle {
   transition: all 1s cubic-bezier(.25,.8,.25,1);
-  //&:hover {
-  //  top: 0;
-  //}
   opacity: 0;
   top:50px;
   font-family: 'Archivo-Bold', sans-serif;
@@ -206,4 +277,29 @@ div.main {
   -ms-transform: rotate(90deg); /* IE 9 */
   -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
   transform: rotate(90deg);
+}
+
+#social {
+  img {
+    margin: 5px;
+    float: right;
+    height: 2em;
+    width: 2em;
+  }
+}
+
+button.hamburger.menuBtn {
+  display: none;
+  position: absolute;
+  top:0;
+  right: 0;
+  &:focus {
+    outline: 0;
+  }
+  .hamburger-box, .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+    width: 30px;
+  }
+  @media (max-width: 992px) {
+    display: block;
+  }
 }

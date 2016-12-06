@@ -1,2 +1,11 @@
-<link rel="stylesheet" href="/stylesheets/music.css"/>
-<h1 class="pageTitle">{{title}}</h1>
+<link rel="stylesheet" href="/stylesheets/tour.css"/>
+{{#each events}}
+    <div class="card-wrapper">
+        <div class="card">
+            <span>{{this.date}}</span>
+            <span>{{this.name}}</span>
+            <span>{{this.location}}</span>
+            <a href="{{this.url}}">Tickets</a>
+        </div>
+    </div>
+{{/each}}

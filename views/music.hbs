@@ -1,15 +1,17 @@
 <link rel="stylesheet" href="/stylesheets/music.css"/>
-<h1 class="pageTitle">{{title}}</h1>
-<ul>
-    {{#each albums}}
-        <li >
+{{#each albums}}
+    <div class="card-wrapper">
+        <div class="card">
+            <!--<div class="overlay"></div>-->
             <img src="{{this.albumImage}}" alt=""/>
             <ul>
                 {{#each this.tracklist}}
-                    <li>{{this}}</li>
+                    <li>
+                        <span class="glyphicon glyphicon-play-circle"></span>
+                        {{this}}
+                    </li>
                 {{/each}}
             </ul>
-        </li>
-    {{/each}}
-</ul>
-
+        </div>
+    </div>
+{{/each}}
