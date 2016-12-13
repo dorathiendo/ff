@@ -1,25 +1,25 @@
 var express = require('express');
 var router = express.Router();
 var handlebars = require('handlebars');
-
-var albums = [
-  {
-    albumImage: 'https://upload.wikimedia.org/wikipedia/en/0/01/Fleet_foxes.jpg',
-    tracklist: ['Sun It Rises','Sun It Rises','Sun It Rises','Sun It Rises','Sun It Rises']
-  },
-  {
-    albumImage: 'https://upload.wikimedia.org/wikipedia/en/thumb/0/05/FleetFoxesHelplessness_Blues2011.jpg/440px-FleetFoxesHelplessness_Blues2011.jpg',
-    tracklist: ['Sun It Rises','Sun It Rises','Sun It Rises','Sun It Rises','Sun It Rises']
-  },
-  {
-    albumImage: 'https://upload.wikimedia.org/wikipedia/en/thumb/0/05/FleetFoxesHelplessness_Blues2011.jpg/440px-FleetFoxesHelplessness_Blues2011.jpg',
-    tracklist: ['Sun It Rises','Sun It Rises','Sun It Rises','Sun It Rises','Sun It Rises']
-  }
-]
+var async = require('async');
+var mysql = require('mysql');
+var _ = require('underscore');
+var connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'cungleme',
+  database: "fleetfoxes"
+});
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('music', { title: 'Music', albums: albums });
+  connection.query('SELECT * FROM music', function (err, rows, fields) {
+    if (err) throw err
+    _.each(rows, function(row){
+      row.tracklist = JSON.parse(row.tracklist);
+    });
+    res.render('music', { title: 'Music', albums: rows });
+  });
 });
 
 module.exports = router;

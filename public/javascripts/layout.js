@@ -1,4 +1,5 @@
 $('document').ready(function(){
+
     $('.menuBtn').click(function(){
         $('.menuBtn').toggleClass('is-active');
         if($('nav').css('right') == '0px'){
@@ -14,4 +15,8 @@ $('document').ready(function(){
     var pageName = window.location.pathname.replace('/', '');
     $('nav li a[name="' + pageName + '"]').addClass('active');
     $('.card .overlay').css('width', $('.card').width());
+});
+
+$(window).on("load", function(){
+    $(".loader").fadeOut("slow");
 });
