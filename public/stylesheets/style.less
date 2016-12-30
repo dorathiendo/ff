@@ -179,6 +179,8 @@ img#background-image {
   object-fit: cover;
   padding: 0 1px;
   left: 0;
+  -webkit-filter: blur(3px); /* Safari */
+  filter: blur(3px);
 }
 
 nav {
@@ -201,10 +203,22 @@ nav {
         &:hover {
           margin-right: 20px;
           color: black;
+          &:before {
+            content: '[';
+          }
+          &:after {
+            content: ']';
+          }
         }
         &.active {
           margin-right: 20px;
           color: black;
+          &:before {
+            content: '[';
+          }
+          &:after {
+            content: ']';
+          }
         }
       }
     }
