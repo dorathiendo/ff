@@ -12,68 +12,30 @@
     <script src="/javascripts/layout.js"></script>
 </head>
 <body>
-<!--<div class="loader-wrapper">-->
-    <!--<img src="/stylesheets/images/ring-alt.gif" alt="" class="loader center-block"/>-->
-<!--</div>-->
-<header>
-    <!--<span class="glyphicon glyphicon-menu-hamburger menuBtn"></span>-->
-    <button class="hamburger hamburger--spin menuBtn" type="button">
-      <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
-      </span>
-    </button>
-    <h1><a href="/">FleetFoxes</a></h1>
-</header>
-<div class="music-player">
-    <div id="buttons">
-        <span class="glyphicon glyphicon-music"></span>
-        <span class="glyphicon glyphicon-volume-off"></span>
-        <span class="glyphicon glyphicon-step-backward"></span>
-        <span class="glyphicon glyphicon-pause"></span>
-        <span class="glyphicon glyphicon-play"></span>
-        <span class="glyphicon glyphicon-step-forward"></span>
-    </div>
-    <div id="song-list">
-        <ul>
-            <li>
-                <span class="glyphicon glyphicon-play-circle"></span>
-                Song
-            </li>
-            <li>
-                <span class="glyphicon glyphicon-play-circle"></span>
-                Song
-            </li>
-            <li>
-                <span class="glyphicon glyphicon-play-circle"></span>
-                Song
-            </li>
-            <li>
-                <span class="glyphicon glyphicon-play-circle"></span>
-                Song
-            </li>
-        </ul>
+<div class="nav">
+    <div>
+        <a href="/news">
+            <span class="glyphicon glyphicon-home"></span>
+            <span class="navName">News</span>
+        </a>
+        <a href="/tour">
+            <span class="glyphicon glyphicon-globe"></span>
+            <span class="navName">Tour</span>
+        </a>
+        <a href="/music">
+            <span class="glyphicon glyphicon-music"></span>
+            <span class="navName">Music</span>
+        </a>
+        <a href="/photo">
+            <span class="glyphicon glyphicon-picture"></span>
+            <span class="navName">Photos</span>
+        </a>
+        <a href="/contact">
+            <span class="glyphicon glyphicon-envelope"></span>
+            <span class="navName">Contact</span>
+        </a>
     </div>
 </div>
-<nav>
-    <span class="glyphicon glyphicon-menu-right menuBtn"></span>
-    <ul>
-        <li><a href="/news" name="news">News</a></li>
-        <li><a href="/" name="about">About</a></li>
-        <li><a href="/music" name="music">Music</a></li>
-        <li><a href="/tour" name="tour">Tour</a></li>
-        <li><a href="/" name="photos">Photos</a></li>
-        <li><a href="/" name="store">Store</a></li>
-        <li><a href="/" name="contact">Contact</a></li>
-    </ul>
-    <div id="social">
-        <img src="/stylesheets/images/1480997096_social_media_corporate_logo_facebook.png" alt="" class="social"/>
-        <img src="/stylesheets/images/1480997099_social_media_corporate_logo_instagram.png" alt="" class="social"/>
-        <img src="/stylesheets/images/1480997139_social_media_corporate_logo_twitter.png" alt="" class="social"/>
-        <img src="/stylesheets/images/1480997151_social_media_corporate_logo_youtube_play.png" alt="" class="social"/>
-    </div>
-</nav>
-
-<div class="main col-lg-8 col-md-12 col-sm-12 col-xs-12">{{{body}}}</div>
-<img id="background-image" src="/stylesheets/images/mountains-silhouette-clip-art-green-treeline-over-white-background.png" alt=""/>
+{{{body}}}
 </body>
 </html>

@@ -1,1 +1,1 @@
-.main .card-wrapper .card span{display:block}.main .card-wrapper .card span:first-child{font-size:2em}.main .card-wrapper .card a{display:block;transition:all .9s cubic-bezier(.25, .8, .25, 1)}.main .card-wrapper .card a:hover{color:black}
+.layout{width:40%;position:relative;overflow:hidden;padding:5%}.layout img{opacity:.5;object-fit:contain;width:100%;height:100%}.layout .info span{display:block;text-align:center}.nav{display:block}
