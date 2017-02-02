@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
     _.each(rows, function(row){
       row.tracklist = JSON.parse(row.tracklist);
     });
-    res.render('music', { title: 'Music', albums: rows });
+    res.render('music', { title: 'Music', albums: rows});
   });
 });
 

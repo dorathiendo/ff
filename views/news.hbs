@@ -1,16 +1,15 @@
 <link rel="stylesheet" href="/stylesheets/news.css"/>
-<div class="main move">
+<div class="main">
     <div class="content-wrapper">
         <div id="home">
-            <h1>News</h1>
-            <img src="/images/0004162178_10.jpg" alt="" class="layout visible"/>
-            <img src="/images/0004162178_10.jpg" alt="" class="layout"/>
-            <img src="/images/0004162178_10.jpg" alt="" class="layout"/>
-            <video src="/stylesheets/images/ff.mp4" class="layout" controls></video>
-            <img src="/images/0004162178_10.jpg" alt="" class="layout"/>
-            <img src="/images/0004162178_10.jpg" alt="" class="layout"/>
-            <img src="/images/0004162178_10.jpg" alt="" class="layout"/>
-            <video src="/stylesheets/images/ff.mp4" class="layout" controls></video>
+            <h1>{{title}}</h1>
+            {{#each posts}}
+                <div class="layout">
+                    <h2>{{this.title}}</h2>
+                    <h3>{{this.date}}</h3>
+                    {{{this.content}}}
+                </div>
+            {{/each}}
         </div>
     </div>
 </div>

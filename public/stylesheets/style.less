@@ -86,16 +86,12 @@ body {
   }
   .content-wrapper {
     transition: all 2s cubic-bezier(.25,.8,.25,1);
-    opacity: 0;
     width: 80%;
     height: 100%;
     overflow: auto;
     position: absolute;
     top: 0;
     right: 0;
-    &.show {
-      opacity: 1;
-    }
     & > div {
       width: 100%;
       position: absolute;
@@ -106,10 +102,15 @@ body {
         border: 3px solid #333333;
         opacity: 0;
         display: block;
+
         transition: all 1s cubic-bezier(.25,.8,.25,1);
         -ms-transform: translate(100px,0); /* IE 9 */
         -webkit-transform: translate(100px,0); /* Safari */
         transform: translate(100px,0); /* Standard syntax */
+
+        -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+        -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
         &:nth-child(even){
           -ms-transform: translate(-100px,0); /* IE 9 */
           -webkit-transform: translate(-100px,0); /* Safari */
@@ -125,19 +126,6 @@ body {
           width: 100%;
           margin-bottom: 10px;
         }
-        @media(min-width: 1024px){
-          margin-top: -2%;
-          margin-left: 35%;
-          &:nth-child(2n){
-            margin-left: 5% !important;
-          }
-          &:nth-child(3n+3){
-            margin-left: 50% !important;
-          }
-          &:nth-child(4n + 1){
-            margin-left: 15% !important;
-          }
-        }
       }
     }
     h1 {
@@ -151,8 +139,6 @@ body {
     right: 0;
   }
 }
-
-
 
 @-webkit-keyframes typing {
   from { width: 100% }
@@ -211,16 +197,3 @@ body {
 @keyframes blinker {
   50% { opacity: 0; }
 }
-
-.come-in {
-  transform: translateY(150px);
-  animation: come-in 0.8s ease forwards;
-}
-.come-in:nth-child(odd) {
-  animation-duration: 0.6s; /* So they look staggered */
-}
-
-@keyframes come-in {
-  to { transform: translateY(0); }
-}
-
